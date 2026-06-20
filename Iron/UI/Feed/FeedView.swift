@@ -41,7 +41,9 @@ struct FeedView : View {
     }
 
     var body: some View {
-        NavigationView {
+        let localization = LocalizationHelper.shared
+        
+        return NavigationView {
             List {
                 Section {
                     ActivityCalendarViewCell()
@@ -68,18 +70,19 @@ struct FeedView : View {
                 }) {
                     HStack {
                         Image(systemName: "plus")
-                        Text("Pin Chart")
+                        Text(localization.feedPinChart)
                     }
                 }
             }
             .listStyleCompat_InsetGroupedListStyle()
-            .navigationBarTitle(Text("Feed"))
-            .navigationBarItems(trailing: Button("Edit") { activeSheet = .pinnedChartEditor })
+            .navigationBarTitle(Text(localization.feedTitle))
+            .navigationBarItems(trailing: Button(localization.feedEdit) { activeSheet = .pinnedChartEditor })
             .sheet(item: $activeSheet) { type in
                 sheetView(type: type)
             }
         }
         .navigationViewStyle(StackNavigationViewStyle())
+        .applyRTLSupport()
     }
 }
 
@@ -90,8 +93,10 @@ private struct PinnedChartEditSheet: View {
     @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
-        VStack(spacing: 0) {
-            SheetBar(title: "Edit Charts", leading: Button("Close") { self.presentationMode.wrappedValue.dismiss() }, trailing: EmptyView()).padding()
+        let localization = LocalizationHelper.shared
+        
+        return VStack(spacing: 0) {
+            SheetBar(title: localization.chartEdit, leading: Button(localization.actionClose) { self.presentationMode.wrappedValue.dismiss() }, trailing: EmptyView()).padding()
             
             Divider()
             
@@ -111,7 +116,7 @@ private struct PinnedChartEditSheet: View {
                          VStack {
                             Spacer()
                             
-                            Text("You don't have any charts pinned.")
+                            Text(localization.feedNoChartsPinned)
                                 .multilineTextAlignment(.center)
                                 .foregroundColor(.secondary)
                                 .padding()
@@ -121,6 +126,7 @@ private struct PinnedChartEditSheet: View {
             )
         }
         .environment(\.editMode, .constant(.active))
+        .applyRTLSupport()
     }
 }
 
@@ -160,9 +166,11 @@ private struct PinnedChartSelectorSheet: View {
     }
     
     var body: some View {
-        VStack(spacing: 0) {
+        let localization = LocalizationHelper.shared
+        
+        return VStack(spacing: 0) {
             VStack(spacing: 0) {
-                SheetBar(title: "Pin Chart", leading: Button("Cancel") { self.resetAndDismiss() }, trailing: EmptyView())
+                SheetBar(title: localization.chartPin, leading: Button(localization.actionCancel) { self.resetAndDismiss() }, trailing: EmptyView())
                 TextField("Search", text: $filter.filter)
                     .textFieldStyle(SearchTextFieldStyle(text: $filter.filter))
                     .padding(.top)
@@ -189,6 +197,7 @@ private struct PinnedChartSelectorSheet: View {
         .actionSheet(item: $selectedExercise) { exercise in
             ActionSheet(title: Text(exercise.title), message: nil, buttons: actionButtons(exercise: exercise))
         }
+        .applyRTLSupport()
     }
 }
 

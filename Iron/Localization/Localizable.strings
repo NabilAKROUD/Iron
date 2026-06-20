@@ -1,0 +1,52 @@
+/* Main Tab Titles */
+"tab.feed" = "Feed";
+"tab.history" = "History";
+"tab.workout" = "Workout";
+"tab.exercises" = "Exercises";
+"tab.settings" = "Settings";
+
+/* Feed View */
+"feed.title" = "Feed";
+"feed.edit" = "Edit";
+"feed.pinChart" = "Pin Chart";
+"feed.noChartsPinned" = "You don't have any charts pinned.";
+
+/* History View */
+"history.title" = "History";
+
+/* Workout View */
+"workout.title" = "Workout";
+"workout.startNew" = "Start New Workout";
+"workout.continue" = "Continue Workout";
+"workout.finish" = "Finish";
+"workout.cancel" = "Cancel";
+
+/* Exercises View */
+"exercises.title" = "Exercises";
+
+/* Settings View */
+"settings.title" = "Settings";
+
+/* Common Actions */
+"action.close" = "Close";
+"action.edit" = "Edit";
+"action.delete" = "Delete";
+"action.save" = "Save";
+"action.add" = "Add";
+"action.cancel" = "Cancel";
+
+/* Empty States */
+"empty.noData" = "No data available";
+"empty.noWorkouts" = "No workouts yet";
+
+/* Charts & Analytics */
+"chart.pin" = "Pin Chart";
+"chart.edit" = "Edit Charts";
+"chart.title" = "Chart";
+"chart.workoutsPerWeek" = "Workouts per week";
+"chart.activityCalendar" = "Activity";
+
+/* Alerts */
+"alert.error" = "Error";
+"alert.success" = "Success";
+"alert.confirm" = "Confirm";

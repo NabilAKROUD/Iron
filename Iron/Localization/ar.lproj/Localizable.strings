@@ -1,0 +1,52 @@
+/* Main Tab Titles */
+"tab.feed" = "الرئيسية";
+"tab.history" = "السجل";
+"tab.workout" = "تمرين";
+"tab.exercises" = "التمارين";
+"tab.settings" = "الإعدادات";
+
+/* Feed View */
+"feed.title" = "الرئيسية";
+"feed.edit" = "تعديل";
+"feed.pinChart" = "تثبيت الرسم البياني";
+"feed.noChartsPinned" = "لم تثبت أي رسوم بيانية حتى الآن.";
+
+/* History View */
+"history.title" = "السجل";
+
+/* Workout View */
+"workout.title" = "تمرين";
+"workout.startNew" = "بدء تمرين جديد";
+"workout.continue" = "استئناف التمرين";
+"workout.finish" = "إنهاء";
+"workout.cancel" = "إلغاء";
+
+/* Exercises View */
+"exercises.title" = "التمارين";
+
+/* Settings View */
+"settings.title" = "الإعدادات";
+
+/* Common Actions */
+"action.close" = "إغلاق";
+"action.edit" = "تعديل";
+"action.delete" = "حذف";
+"action.save" = "حفظ";
+"action.add" = "إضافة";
+"action.cancel" = "إلغاء";
+
+/* Empty States */
+"empty.noData" = "لا توجد بيانات";
+"empty.noWorkouts" = "لا توجد تمارين بعد";
+
+/* Charts & Analytics */
+"chart.pin" = "تثبيت الرسم البياني";
+"chart.edit" = "تعديل الرسوم البيانية";
+"chart.title" = "رسم بياني";
+"chart.workoutsPerWeek" = "التمارين في الأسبوع";
+"chart.activityCalendar" = "النشاط";
+
+/* Alerts */
+"alert.error" = "خطأ";
+"alert.success" = "نجح";
+"alert.confirm" = "تأكيد";

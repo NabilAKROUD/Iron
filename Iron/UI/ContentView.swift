@@ -36,40 +36,43 @@ struct ContentView : View {
             .alert(item: $restoreResult) { restoreResultHolder in
                 RestoreActionSheet.restoreResultAlert(restoreResult: restoreResultHolder.value)
             }
+            .applyRTLSupport()
     }
     
     @ViewBuilder
     private var tabView: some View {
+        let localization = LocalizationHelper.shared
+        
         if #available(iOS 14, *) {
             TabView(selection: $sceneState.selectedTabNumber) {
                 FeedView()
                     .tag(SceneState.Tab.feed.rawValue)
                     .tabItem {
-                        Label("Feed", systemImage: "house")
+                        Label(localization.tabFeed, systemImage: "house")
                     }
 
                 HistoryView()
                     .tag(SceneState.Tab.history.rawValue)
                     .tabItem {
-                        Label("History", systemImage: "clock")
+                        Label(localization.tabHistory, systemImage: "clock")
                     }
 
                 WorkoutTab()
                     .tag(SceneState.Tab.workout.rawValue)
                     .tabItem {
-                        Label("Workout", systemImage: "plus.diamond")
+                        Label(localization.tabWorkout, systemImage: "plus.diamond")
                     }
 
                 ExerciseMuscleGroupsView()
                     .tag(SceneState.Tab.exercises.rawValue)
                     .tabItem {
-                        Label("Exercises", systemImage: "tray.full")
+                        Label(localization.tabExercises, systemImage: "tray.full")
                     }
 
                 SettingsView()
                     .tag(SceneState.Tab.settings.rawValue)
                     .tabItem {
-                        Label("Settings", systemImage: "gear")
+                        Label(localization.tabSettings, systemImage: "gear")
                     }
             }
             .productionEnvironment()
@@ -82,27 +85,27 @@ struct ContentView : View {
                 FeedView()
                     .productionEnvironment()
                     .hostingController()
-                    .tabItem(title: "Feed", image: UIImage(systemName: "house"), tag: 0),
+                    .tabItem(title: localization.tabFeed, image: UIImage(systemName: "house"), tag: 0),
 
                 HistoryView()
                     .productionEnvironment()
                     .hostingController()
-                    .tabItem(title: "History", image: UIImage(systemName: "clock"), tag: 1),
+                    .tabItem(title: localization.tabHistory, image: UIImage(systemName: "clock"), tag: 1),
 
                 WorkoutTab()
                     .productionEnvironment()
                     .hostingController()
-                    .tabItem(title: "Workout", image: UIImage(systemName: "plus.square"), tag: 2),
+                    .tabItem(title: localization.tabWorkout, image: UIImage(systemName: "plus.square"), tag: 2),
 
                 ExerciseMuscleGroupsView()
                     .productionEnvironment()
                     .hostingController()
-                    .tabItem(title: "Exercises", image: UIImage(systemName: "tray.full"), tag: 3),
+                    .tabItem(title: localization.tabExercises, image: UIImage(systemName: "tray.full"), tag: 3),
 
                 SettingsView()
                     .productionEnvironment()
                     .hostingController()
-                    .tabItem(title: "Settings", image: UIImage(systemName: "gear"), tag: 4),
+                    .tabItem(title: localization.tabSettings, image: UIImage(systemName: "gear"), tag: 4),
             ], selection: sceneState.selectedTabNumber)
         }
     }
